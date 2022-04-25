@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Email</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03_510-(375)-New" transform="translate(-347.000000, -765.000000)">
+            <g id="00_Header" transform="translate(335.000000, 0.000000)">
+                <g id="Kontakt/sns" transform="translate(12.000000, 581.000000)">
+                    <g id="Email" transform="translate(0.000000, 184.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+                        <g id="Group-5" transform="translate(2.000000, 2.666667)" fill="#D8D8D8">
+                            <path d="M6.718,6.85059367 C6.27,7.09201847 5.729,7.09201847 5.281,6.85059367 L0,4 L0,8.51583113 C0,9.33509235 0.672,10 1.5,10 L10.5,10 C11.328,10 12,9.33509235 12,8.51583113 L12,4 L6.718,6.85059367 Z" id="Fill-1"></path>
+                            <path d="M6,6 C5.916,6 5.834,5.979 5.761,5.939 L0.261,2.939 C0.1,2.851 0,2.683 0,2.5 L0,1.5 C0,0.672 0.672,0 1.5,0 L10.5,0 C11.328,0 12,0.672 12,1.5 L12,2.5 C12,2.683 11.9,2.851 11.739,2.939 L6.239,5.939 C6.166,5.979 6.084,6 6,6 L6,6 Z" id="Fill-3"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
