@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel sync start",
-    "sync": "browser-sync start -p 'your-wpurl.test' --files 'web/app/themes/jungolmok/**/*.php' 'web/app/themes/jungolmok/assets/dist/*.js' 'web/app/themes/jungolmok/assets/dist/*.css'",
+    "sync": "browser-sync start -p 'bbazubi.test' --files 'web/app/themes/jungolmok/**/*.php' 'web/app/themes/jungolmok/assets/dist/*.js' 'web/app/themes/jungolmok/assets/dist/*.css'",
     "start": "webpack --config webpack.config.dev.js",
     "prod": "NODE_ENV=production webpack --config webpack.config.prod.js"
   },
