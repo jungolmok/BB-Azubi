@@ -287,23 +287,3 @@ add_action('init', 'acf_add_list');
 
 
 
-
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-// wp_nav_menu() Cleaning
-// Remove Class
-function discard_menu_classes($classes, $item) {
-    return (array)get_post_meta( $item->ID, '_menu_item_classes', true );
-}
-add_filter('nav_menu_css_class', 'discard_menu_classes', 10, 2);
-// Remove ID
-function clear_nav_menu_item_id($id, $item, $args) {
-	return "";
-}
-add_filter('nav_menu_item_id', 'clear_nav_menu_item_id', 10, 3);
-// Remove Class - sub-menu
-function new_submenu_class($menu) {    
-    $menu = preg_replace('/ class="sub-menu"/','',$menu);        
-    return $menu;      
-}
-add_filter('wp_nav_menu','new_submenu_class'); 
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
