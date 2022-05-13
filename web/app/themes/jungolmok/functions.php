@@ -41,18 +41,12 @@ add_action('after_setup_theme', 'Jungolmok_setup');
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 
-// CUSTOM POSTTYPE
-require get_template_directory() . '/inc/post-types.php';
-
-
 
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // Jungolmok : Import JS & CSS
 function jungolmok_scripts() {
   wp_enqueue_script('jg-bundle', get_stylesheet_directory_uri() . '/assets/dist/jg.bundle.js', [], '1.0.0', true);
   wp_enqueue_style('jg', get_stylesheet_directory_uri() . '/assets/dist/jg.css', [], '1.0.0', 'all');
-
-  wp_localize_script('jg-bundle', 'jg', array( 'dir' => get_template_directory_uri() ));
 };
 add_action('wp_enqueue_scripts', 'jungolmok_scripts');
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -245,15 +239,6 @@ remove_theme_support( 'block-templates' );
 
 
 
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//Register an Style.css for Wordpress Plugin CSS
-function add_wp_acf_style() {
-	wp_enqueue_style('acf-admin-styles', get_template_directory_uri().'/_wp-custom/wp-acf.css');
-	wp_enqueue_script('acf-admin-script', get_template_directory_uri() . '/_wp-custom/wp-acf.js');
-} 
-add_action('admin_enqueue_scripts', 'add_wp_acf_style');
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
 
 
 // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -269,20 +254,7 @@ function my_acf_json_load_point( $paths ) {
     return $paths;
 }
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-function acf_add_list() {
-	if( function_exists('acf_add_options_page') ) {
-		acf_add_options_page(array(
-			'page_title' 	=> '_General',
-			'menu_title'	=> '_General',
-			'menu_slug' 	=> 'theme-general-settings',
-			'capability'	=> 'edit_posts',
-			'redirect'		=> false
-		));
-	}	
-}
-add_action('init', 'acf_add_list');
-// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
 
 
 

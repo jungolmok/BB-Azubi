@@ -11,6 +11,7 @@ if( have_rows('list--modules')):
 	$id = 0;
 	while ( have_rows('list--modules') ) : the_row();
 		$id ++;
+		include('module/00-custom-header.php');
 		include('module/01-custom-a.php');
 		include('module/01-custom-b.php');
 	endwhile;

@@ -32,17 +32,20 @@
          url('/app/themes/jungolmok/assets/fonts/manrope-v11-latin-800.svg#Manrope') format('svg'); /* Legacy iOS */
 }
 
+* {
+    box-sizing: border-box;
+}
 html {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 body {
-    background-color: var(--color-grey);
     font-family: 'Manrope';
+    background-color: var(--color-grey);
     color: var(--color-black);
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
     height: auto;
     width: 100%;
     overflow-x: hidden; 
@@ -57,32 +60,20 @@ b, h1, h2, h3, h4, h5, h6, strong, button {
     position: relative;
     font-weight: 800; 
     font-style: normal;
-    clear: both;
-    text-transform: uppercase;
     line-height: 1.2;
-}
-
-canvas {
-    height: auto;
-    width: auto;
 }
 pre {
     font-size: 12px;
     line-height: 1.2;
 }
 h1 { 
-    font-size: 64px; 
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-    clip-path: inset(0px 0px 99.9% 99.9%);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    padding: 0;
-    border: 0;
+    font-size: 64px;
 }
-h2 { font-size: 42px; margin-top:0; margin-bottom: 20px;}
+h2 { 
+    font-size: 42px; 
+    margin-top:0; 
+    margin-bottom: 20px;
+}
 h3 { 
     font-size: 36px;
     margin: 0 auto 16px;
@@ -110,53 +101,12 @@ figure {
 img { 
     display: block;
     position: relative;
-    height: 100%;
+    width: 100%;
     max-width: 100%; 
-    width: 100%
-}
-figure.setratio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     height: auto;
-    width: 100%;
-}
-figure.setratio img,
-figure.setratio video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-}
-figure.setratio::before {
-    content: '';
-    display: block;
-    position: relative;
-}
-figure.setratio.get21x9::before { padding-bottom: 42.25%; }
-figure.setratio.get16x9::before { padding-bottom: 56.25%; }
-figure.setratio.get4x3::before { padding-bottom: 75%; }
-figure.setratio.get1x1::before { padding-bottom: 100%; }
-figure.setratio.getfull::before,
-figure.setratio.getorigin::before { 
-    display: none;
-}
-figure.setratio.getorigin img {
-    position: relative;
-    -o-object-fit: unset;
-       object-fit: unset;
-}
-figure.setratio.getfull video {
-    position: relative;
 }
 p {
-    line-height: 1.65;
     margin-bottom: 24px;
-    -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-            hyphens: auto;
 }
 p:last-child {
     margin-bottom:0;
@@ -170,28 +120,29 @@ a {
     cursor: pointer;
     color: inherit;
 }
-article,
-div {
+article, div {
     display: block;
     position: relative;
 }
-section {
+
+header, 
+aside, 
+section,
+footer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     width: 100%;
     height: auto;
 }
 .header--container,
-.footer--container,
-.section--container {
+.aside--container,
+.section--container,
+.footer--container {
     position: relative;
     width: 100%;
     max-width: 1200px;
     height: auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+    min-height: 100%;
 }
 .block--contents {
     width: 100%;
@@ -199,54 +150,25 @@ section {
 }
 
 
-/* –––––––––––––––––––––––––––––––––––––––
-210203 _ jk : Lazyload Background image && img
-Before Loading here 
-*/
-figure.jg--lazybg,
-div.jg--preview.jg--lazybg,
-footer .jg--social.jg--lazybg a {
-    background-image: none !important;
-    opacity: 0 !important;
-    background-color:var(--color-black);
- }
- img.jg--lazyimg,
- iframe.jg--lazyimg {
-	opacity: 0;
-}
-/* after Loading here */
-figure,
-div.jg--preview,
-footer .jg--social a {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    transition: opacity .4s ease-in-out;
-}
-img,
-iframe {
-	opacity: 1;
-    transition: opacity .4s ease-in-out;
-}
-/* Slider ist aufgrund 'slideshow animation' eine Ausnahme */
-.slider--container figure {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    transition: opacity .8s ease-in-out;
-}
-
-
-
 
 /* ##HEADER */
 header {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: auto;
+    height: 80px;
 }
+.header--container {
+    padding: 0 20px;
+}
+.logo {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ##ASIDE */
+.aside--container {
+    padding: 0 20px;
+}
+
 
 
 /* ##MAIM */
@@ -256,17 +178,19 @@ main {
     width: 100%;
     height: auto;
 }
-main .section--container {
+section {
+    flex-direction: column;
+    align-items: center;
+}
+.section--container {
     padding: 90px 20px;
 }
 
 
+
 /* ##FOOTER */
-footer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: auto;
+.footer--container {
+    padding: 0 20px;
 }
 
 

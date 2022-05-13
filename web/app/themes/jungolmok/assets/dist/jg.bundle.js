@@ -105,7 +105,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./reso
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_jgmain_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/jgmain.css */ \"./resource/css/jgmain.css\");\n/* harmony import */ var _css_jgmain_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_jgmain_css__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n//# sourceURL=webpack:///./resource/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_jgmain_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/jgmain.css */ \"./resource/css/jgmain.css\");\n/* harmony import */ var _css_jgmain_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_jgmain_css__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./resource/js/index.js?");
 
 /***/ })
 
