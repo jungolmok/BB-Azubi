@@ -1,43 +1,25 @@
-
 <?php 
-    $layout = "home--header";
+    $layout = "custom--b";
     if( get_row_layout() == $layout ):
-        $maintext = get_sub_field("main--text");
-
-        $bgVideo = get_sub_field("bg--img--video")["video"];
-        $bgImg = get_sub_field("bg--img--video")["bildimg"];
-
-        $colorBG = get_sub_field("colors")["background--color"];
-        $colorFont = get_sub_field("colors")["font--color"];
+        $Image = get_sub_field("image");
+        $Text = get_sub_field("text");
 ?>
-<section 
-    class="<?php echo $layout; ?>"
-    style="<?php if ( $colorBG ) : ?>background-color:<?php echo $colorBG.';'; endif;?><?php if ( $colorFont ) : ?>color:<?php echo $colorFont.';'; endif;?>">
-
-    <div class="section--bg">
-    <figure class="setratio getfull">
-        <video 
-            width="<?php echo $bgVideo["width"]; ?>" 
-            height="<?php echo $bgVideo["height"]; ?>" 
-            loop="true" 
-            autoplay="autoplay"
-            muted>
-            <source 
-                src="<?php echo $bgVideo["url"]; ?>" 
-                type="<?php echo $bgVideo["type"].'/'.$bgVideo["subtype"]; ?>">
-        </video>
-    </figure>
-    </div>
-
+<section class="<?php echo $layout; ?>">
     <div class="section--container">
-        <article class="blocks">
-            <div class="block--contents">
-                <?php if( $maintext ): ?>
-                <?php echo $maintext; ?>
-                <?php endif; ?>
-            </div>
-        </article>
+        <figure>
+            <img 
+                src="<?php echo $Image['url']; ?>"
+                width="<?php echo $Image['width']; ?>"
+                height="<?php echo $Image['height']; ?>"
+                alt="<?php echo $Image['alt']; ?>"
+                title="<?php echo $Image['title']; ?>"
+                />
+        </figure>
+        <?php if( $Text ): ?>
+        <p><?php echo $Text; ?></p>
+        <?php endif; ?>
     </div>
     
 </section>
 <?php endif; ?>
+
