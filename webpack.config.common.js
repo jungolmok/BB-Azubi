@@ -22,26 +22,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(s[ac]|c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              url: false,
             }
           },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: [
-                require('autoprefixer')
-              ]
-            }
-          }
+          { loader: 'postcss-loader' }
         ]
-      }
+      },
     ]
   }
 }
